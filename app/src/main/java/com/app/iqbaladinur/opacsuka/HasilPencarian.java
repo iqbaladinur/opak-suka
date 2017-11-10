@@ -25,7 +25,7 @@ public class HasilPencarian extends AppCompatActivity {
         Bundle recived_data = getIntent().getExtras();
         Listitem = (ArrayList) recived_data.get("Datanya");
         jumlah_data = Listitem.size();
-        this.setTitle(recived_data.getString("Keyword")+" ("+jumlah_data+" found)");
+        this.setTitle(String.format("%s (%d found)", recived_data.getString("Keyword"), jumlah_data));
 
         DataViewCustomAdaptor data = new DataViewCustomAdaptor(HasilPencarian.this, Listitem);
         Listvew.setAdapter(data);

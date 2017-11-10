@@ -21,6 +21,6 @@
         android:background="@color/colorPrimary"
         app:itemTextColor="@color/mycolor"
         app:itemIconTint="@color/mycolor"
-        app:menu="@menu/navigation" />
+        app:menu="@menu/navigation"/>
 
 </LinearLayout>

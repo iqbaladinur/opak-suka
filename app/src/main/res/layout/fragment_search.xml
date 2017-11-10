@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        android:background="@drawable/background">
+        android:background="@drawable/back_style">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -22,7 +22,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/keyword"
-            android:text="Recently Search :"/>
+            android:text="Recently Search :"
+            android:textColor="#ffffff"/>
         <ListView
             android:id="@+id/cached_keyword"
             android:padding="10dp"
@@ -31,23 +32,10 @@
             android:layout_below="@+id/recent"
             android:layout_marginTop="5dp"></ListView>
 
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="20dp"
-            android:text="OPAC"
-            android:textAlignment="center"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15pt"
-            android:textStyle="bold" />
-
         <SearchView
             android:id="@+id/keyword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/title"
             android:background="@drawable/search_style"
             android:iconifiedByDefault="false"
             android:paddingBottom="5dp"

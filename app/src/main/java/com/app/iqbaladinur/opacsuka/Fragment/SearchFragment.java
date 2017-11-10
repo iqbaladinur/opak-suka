@@ -94,7 +94,7 @@ public class SearchFragment extends android.app.Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 dialog.show();
-                key_word = ""+mySearch.getQuery();
+                key_word = mySearch.getQuery().toString();
                 result = mService.getData(key_word);
                 result.enqueue(new Callback<DataPencarian>() {
                     @Override
