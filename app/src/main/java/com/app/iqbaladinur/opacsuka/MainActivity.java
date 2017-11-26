@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         TextView title = (TextView) mCustomView.findViewById(R.id.title_text);
                         mActionBar.setCustomView(mCustomView);
                         mActionBar.setDisplayShowCustomEnabled(true);
-                        title.setText("OPAC");
+                        title.setText("Opac Sunan Kalijaga");
                     }
                     return true;
                 case R.id.navigation_dashboard:
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         TextView title = (TextView) mCustomView.findViewById(R.id.title_text);
         mActionBar.setCustomView(mCustomView);
         mActionBar.setDisplayShowCustomEnabled(true);
-        title.setText("OPAC");
+        title.setText("Opac Sunan Kalijaga");
 
         if (findViewById(R.id.content) != null){
             SearchFragment search_fragment = new SearchFragment();

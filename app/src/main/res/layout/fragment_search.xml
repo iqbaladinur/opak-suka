@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        android:background="@drawable/back_style">
+        android:background="#EEEEEE">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -19,26 +19,29 @@
         <TextView
             android:id="@+id/recent"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/keyword"
+            android:layout_below="@id/searchshell"
             android:text="Recently Search :"
-            android:textColor="#ffffff"/>
+            android:textColor="#424242"/>
         <ListView
             android:id="@+id/cached_keyword"
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/recent"
-            android:layout_marginTop="5dp"></ListView>
+            android:layout_below="@id/recent">
 
-        <SearchView
-            android:id="@+id/keyword"
+        </ListView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/searchshell"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/search_style"
-            android:iconifiedByDefault="false"
-            android:paddingBottom="5dp"
-            android:queryHint="Search Here"></SearchView>
+            android:layout_height="wrap_content">
+            <SearchView
+                android:id="@+id/keyword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Search Here"></SearchView>
+        </android.support.v7.widget.CardView>
     </RelativeLayout>
 </FrameLayout>

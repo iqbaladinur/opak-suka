@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.app.iqbaladinur.opacsuka.Fragment.AboutFragment"
-    android:background="@drawable/back_style">
+    android:background="#EEEEEE">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -23,13 +23,13 @@
             android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="9pt"
-            android:text="Opac Apps v 1.0"
-            android:textColor="#ffffff"/>
+            android:text="Opac Apps v 1.1"
+            android:textColor="#616161"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textColor="#ffffff"
+            android:textColor="#616161"
             android:text="Terimakasih telah mendownload aplikasi opac uin. Semoga Bermanfaat dan dapat digunakan."/>
     </LinearLayout>
 

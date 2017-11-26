@@ -26,28 +26,32 @@ public class SavedDataFragment extends android.app.Fragment {
     ArrayList Listitem;
     DatabaseHandler db;
     ListView Listvew;
+    TextView nodata;
     public SavedDataFragment() {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         db = new DatabaseHandler(getActivity());
         View rootView = inflater.inflate(R.layout.fragment_saved_data, container, false);
         List<SavedData> datane = db.getAllSavedDataStore();
+        nodata = (TextView) rootView.findViewById(R.id.textNodata);
         Listitem = new ArrayList<>();
         ListModel tampung;
-        for (int i = 0; i < datane.size();i++){
-            tampung = new ListModel();
-            tampung.setJudul(datane.get(i).getJudul());
-            tampung.setDes(datane.get(i).getDes());
-            tampung.setLokasi(datane.get(i).getLokasi());
-            Listitem.add(tampung);
+        if (datane.size() > 0){
+            for (int i = 0; i < datane.size();i++){
+                tampung = new ListModel();
+                tampung.setJudul(datane.get(i).getJudul());
+                tampung.setDes(datane.get(i).getDes());
+                tampung.setLokasi(datane.get(i).getLokasi());
+                Listitem.add(tampung);
+            }
+            Listvew = (ListView) rootView.findViewById(R.id.savedData);
+            SavedStoreCustomAdapter data = new SavedStoreCustomAdapter(getActivity(), Listitem);
+            Listvew.setAdapter(data);
+            nodata.setVisibility(View.GONE);
         }
-        Listvew = (ListView) rootView.findViewById(R.id.savedData);
-        SavedStoreCustomAdapter data = new SavedStoreCustomAdapter(getActivity(), Listitem);
-        Listvew.setAdapter(data);
         return rootView;
     }
 

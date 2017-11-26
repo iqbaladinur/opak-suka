@@ -89,6 +89,13 @@ public class SearchFragment extends android.app.Fragment {
 
         i = new Intent(getActivity(), HasilPencarian.class);
 
+        /*on clicked*/
+        mySearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mySearch.setIconified(false);
+            }
+        });
         //on query submit
         mySearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

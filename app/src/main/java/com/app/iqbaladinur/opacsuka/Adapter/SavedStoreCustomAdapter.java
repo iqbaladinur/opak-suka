@@ -2,6 +2,8 @@ package com.app.iqbaladinur.opacsuka.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +47,7 @@ public class SavedStoreCustomAdapter extends BaseAdapter {
         if (convertView == null){
             LayoutInflater inflater = (LayoutInflater)act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = inflater.inflate(R.layout.recycle_items, null);
-            holder = new ViewHolder();
+            holder = new ViewHolder(convertView);
             holder.txtJudul = (TextView) convertView.findViewById(R.id.judul);
             holder.txtDeskripsi = (TextView) convertView.findViewById(R.id.deskripsi);
             holder.txtLokasi = (TextView) convertView.findViewById(R.id.lokasi);
@@ -59,6 +61,7 @@ public class SavedStoreCustomAdapter extends BaseAdapter {
         holder.txtJudul.setText(data.getJudul());
         holder.txtDeskripsi.setText(data.getDes());
         holder.txtLokasi.setText(data.getLokasi());
+        holder.data = data;
         return convertView;
     }
 
@@ -66,5 +69,28 @@ public class SavedStoreCustomAdapter extends BaseAdapter {
         public TextView txtJudul;
         public TextView txtDeskripsi;
         public TextView txtLokasi;
+        public ListModel data;
+
+        public ViewHolder(View v){
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder message = new AlertDialog.Builder(v.getContext());
+                    message.setCancelable(false);
+                    message.setTitle("Detail Informasi");
+                    message.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    message.setMessage(data.getDes());
+                    AlertDialog m = message.create();
+                    m.show();
+                    TextView msgTxt = (TextView) m.findViewById(android.R.id.message);
+                    msgTxt.setTextSize(12);
+                }
+            });
+        }
     }
 }

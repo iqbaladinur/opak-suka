@@ -18,9 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        app:itemTextColor="@color/mycolor"
-        app:itemIconTint="@color/mycolor"
+        android:background="@android:color/white"
+        app:itemTextColor="#9E9E9E"
+        app:itemIconTint="#9E9E9E"
         app:menu="@menu/navigation"/>
-
 </LinearLayout>

@@ -2,6 +2,8 @@ package com.app.iqbaladinur.opacsuka.Adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -92,6 +94,26 @@ public class DataViewCustomAdaptor extends BaseAdapter {
                                 Toast.LENGTH_SHORT).show();
                     }
                     return true;
+                }
+            });
+
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder message = new AlertDialog.Builder(v.getContext());
+                    message.setCancelable(false);
+                    message.setTitle("Detail Informasi");
+                    message.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    message.setMessage(data.getDes());
+                    AlertDialog m = message.create();
+                    m.show();
+                    TextView msgTxt = (TextView) m.findViewById(android.R.id.message);
+                    msgTxt.setTextSize(12);
                 }
             });
         }
